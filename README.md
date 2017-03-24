@@ -14,11 +14,15 @@ Tooling MAY make use of these features now, with minimal work required to suppor
 
 Path|Object|New Extension|Type|Description
 ---|---|---|---|---|
-#/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be concatenated with any existing `servers` array, and they MUST be prepended
+#/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be concatenated with any existing `servers` array converted from Swagger 2.0 metadata, and they MUST be prepended
+#/paths within [PathItem Object]() OR [Operation Object]()|trace|x-trace|[V2 Operation Object]()|This MUST be a Swagger 2.0 Operation Object, it MUST be treated as per any other Operation Object, for the `TRACE` HTTP method
+#/parameters OR #/paths/{pathItem}/parameters OR #/paths/{pathItem}/{operation}/parameters|deprecated|x-deprecated|Boolean|Indicates the parameter is deprecated and SHOULD be transitioned out of use
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|anyOf|x-anyOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|oneOf|x-oneOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|not|x-not|[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|required|x-required|Array|Where a property has been removed from `required` due to use of `x-anyOf`, `x-oneOf` or `x-not`, converters MUST merge these arrays when converting from **swaggerplusplus** to OpenAPI 3.0.x. When a converter converts from 3.0.x to **swaggerplusplus** it MUST remove any `required` properties hidden by `x-anyOf`, `x-oneOf` or `x-not` and move them into this array.
+#/|components/links|x-links|Map {Link Object}|Contains reusable Link Objects
+#/|components/callbacks|x-callbacks|Map {Callback Object}|Contains reusable Callback Objects
 
 ## Conversion
 

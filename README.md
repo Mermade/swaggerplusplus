@@ -28,3 +28,7 @@ Converters MUST validate the specification extensions are of the expected type, 
 
 * [Converter/validator](https://github.com/mermade/swagger2openapi)
 * [Rebilly Redoc](https://github.com/Rebilly/ReDoc) - supports a subset of **swaggerplusplus**
+
+## In the wild
+
+[Zappiti API](http://zappiti.com/api/zappiti-player-4k/swagger/)

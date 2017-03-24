@@ -1,4 +1,4 @@
-[# swaggerplusplus
+# swaggerplusplus
 
 ### A proposal for transitioning between Swagger 2.0 and OpenAPI 3.0.x
 
@@ -15,8 +15,8 @@ Tooling MAY make use of these features now, with minimal work required to suppor
 Path|Object|New Extension|Type|Description
 ---|---|---|---|---|
 #/|servers|x-servers|Array|An array of [Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)
-\* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|anyOf|x-anyOf|[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|Schema must be extracted and post-processed before validation
-\* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|oneOf|x-oneOf|[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|Schema must be extracted and post-processed before validation
+\* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|anyOf|x-anyOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema must be extracted and post-processed before validation
+\* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|oneOf|x-oneOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema must be extracted and post-processed before validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|not|x-not|[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|Schema must be extracted and post-processed before validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|required|x-required|Array|Where a property has been removed from `required` due to use of `x-anyOf`, `x-oneOf` or `x-not`. Converters MUST merge these arrays when converting from **swaggerplusplus** to OpenAPI 3.0.x. When a converter converts from 3.0.x to **swaggerplusplus** it must remove any `required` properties hidden by `x-anyOf`, `x-oneOf` or `x-not` and move it into this array.
 

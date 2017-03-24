@@ -15,8 +15,11 @@ Tooling MAY make use of these features now, with minimal work required to suppor
 Path|Object|New Extension|Type|Description
 ---|---|---|---|---|
 #/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be concatenated with any existing `servers` array converted from Swagger 2.0 metadata, and they MUST be prepended
-#/paths within [PathItem Object]() OR [Operation Object]()|trace|x-trace|[V2 Operation Object]()|This MUST be a Swagger 2.0 Operation Object, it MUST be treated as per any other Operation Object, for the `TRACE` HTTP method
+#/paths{pathItem}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
+#/paths{pathItem}/{operation}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
+#/paths within [PathItem Object]()/[Operation Object]()|trace|x-trace|[V2 Operation Object]()|This MUST be a Swagger 2.0 Operation Object, it MUST be treated as per any other Operation Object, for the `TRACE` HTTP method
 #/parameters OR #/paths/{pathItem}/parameters OR #/paths/{pathItem}/{operation}/parameters|deprecated|x-deprecated|Boolean|Indicates the parameter is deprecated and SHOULD be transitioned out of use
+#/paths{pathItem}/{operation}|callbacks|x-callbacks|[[Callback Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|anyOf|x-anyOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|oneOf|x-oneOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|not|x-not|[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|Schema MUST be extracted and post-processed before being used for validation

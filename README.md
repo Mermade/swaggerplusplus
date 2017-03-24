@@ -2,7 +2,7 @@
 
 ### A proposal for transitioning between Swagger 2.0 and OpenAPI 3.0.x
 
-#### Version 1.0.0
+#### Version 1.0.0-RC0
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
@@ -14,7 +14,7 @@ Tooling MAY make use of these features now, with minimal work required to suppor
 
 Path|Object|New Extension|Type|Description
 ---|---|---|---|---|
-#/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be concatenated with any existing `servers` array converted from Swagger 2.0 metadata, and they MUST be prepended
+#/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be **prepended to** any existing `servers` array converted from Swagger 2.0 metadata
 #/paths{pathItem}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
 #/paths{pathItem}/{operation}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
 #/paths within [PathItem Object]()/[Operation Object]()|trace|x-trace|[V2 Operation Object]()|This MUST be a Swagger 2.0 Operation Object, it MUST be treated as per any other Operation Object, for the `TRACE` HTTP method

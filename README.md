@@ -30,13 +30,13 @@ Path|Object|New Extension|Type|Description
 
 ## Conversion
 
-Converters MUST validate the specification extensions are of the expected type, and that mandatory properties (if any) are present.
+Converters MUST validate the specification extensions are of the expected type, and that mandatory properties (if any) are present. Failing that, they MUST leave the specification extension unchanged.
 
-## Tools
+## swaggerplusplus Tools
 
 * [Converter/validator](https://github.com/mermade/swagger2openapi)
 * [Rebilly Redoc](https://github.com/Rebilly/ReDoc) - supports a subset of **swaggerplusplus**
 
-## In the wild
+## swaggerplusplus in the wild
 
 [Zappiti API](http://zappiti.com/api/zappiti-player-4k/swagger/)

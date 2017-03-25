@@ -35,7 +35,7 @@ Converters MUST validate the specification extensions are of the expected type, 
 ## swaggerplusplus Tools
 
 * [Converter/validator](https://github.com/mermade/swagger2openapi)
-* [Rebilly Redoc](https://github.com/Rebilly/ReDoc) - supports a subset of **swaggerplusplus**
+* [Rebilly Redoc](https://github.com/Rebilly/ReDoc) - supports a [subset](https://github.com/Rebilly/ReDoc/blob/master/docs/redoc-vendor-extensions.md) of **swaggerplusplus**
 
 ## swaggerplusplus in the wild
 

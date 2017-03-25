@@ -12,7 +12,7 @@ Tooling MAY make use of these features now, with minimal work required to suppor
 
 ## Features
 
-Path|Object|New Extension|Type|Description
+Path|Version 3.0.x Object|New Extension|Type|Description
 ---|---|---|---|---|
 #/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be **prepended to** any existing `servers` array converted from Swagger 2.0 metadata
 #/paths{pathItem}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|

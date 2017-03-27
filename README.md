@@ -15,18 +15,18 @@ Tooling MAY make use of these features now, with minimal work required to suppor
 Path|Version 3.0.x Object|New Extension|Type|Description
 ---|---|---|---|---|
 #/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be **prepended to** any existing `servers` array converted from Swagger 2.0 metadata
-#/paths{pathItem}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
-#/paths{pathItem}/{operation}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
-#/paths within [PathItem Object]()/[Operation Object]()|trace|x-trace|[V2 Operation Object]()|This MUST be a Swagger 2.0 Operation Object, it MUST be treated as per any other Operation Object, for the `TRACE` HTTP method
+#/paths{[pathItem](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#path-item-object)}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
+#/paths{[pathItem](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#path-item-object)}/{[operation](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
+#/paths within [Path Item Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#path-item-object)/[Operation Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)|trace|x-trace|[V2 Operation Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)|This MUST be a Swagger 2.0 Operation Object, it MUST be treated as per any other Operation Object, for the `TRACE` HTTP method
 #/parameters OR #/paths/{pathItem}/parameters OR #/paths/{pathItem}/{operation}/parameters|deprecated|x-deprecated|Boolean|Indicates the parameter is deprecated and SHOULD be transitioned out of use
 #/paths{pathItem}/{operation}|callbacks|x-callbacks|[[Callback Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|anyOf|x-anyOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|oneOf|x-oneOf|[[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)]|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|not|x-not|[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#schemaObject)|required|x-required|Array|Where a property has been removed from `required` due to use of `x-anyOf`, `x-oneOf` or `x-not`, converters MUST merge these arrays when converting from **swaggerplusplus** to OpenAPI 3.0.x. When a converter converts from 3.0.x to **swaggerplusplus** it MUST remove any `required` properties hidden by `x-anyOf`, `x-oneOf` or `x-not` and move them into this array.
-\* within [Response Object]()|links|x-links|Map {Link Object}|Links or references to reusable Link Objects
-#/|components/links|x-links|Map {Link Object}|Contains reusable Link Objects
-#/|components/callbacks|x-callbacks|Map {Callback Object}|Contains reusable Callback Objects
+\* within [Response Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#response-object)|links|x-links|Map {[Link Object](https://github.com/OAI/OpenAPI-Specification/blob/3.0.0-rc0/versions/3.0.md#link-object)}|Links or references to reusable Link Objects
+#/|components/links|x-links|Map {[Link Object](https://github.com/OAI/OpenAPI-Specification/blob/3.0.0-rc0/versions/3.0.md#link-object)}|Contains reusable Link Objects
+#/|components/callbacks|x-callbacks|Map {[Callback Object](https://github.com/OAI/OpenAPI-Specification/blob/3.0.0-rc0/versions/3.0.md#callback-object)}|Contains reusable Callback Objects
 
 ## Conversion
 

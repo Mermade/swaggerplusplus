@@ -2,7 +2,7 @@
 
 ### A proposal for transitioning between Swagger 2.0 and OpenAPI 3.0.x
 
-#### Version 1.0.0-rc1
+#### Version 1.0.0-rc2
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) [RFC2119](https://tools.ietf.org/html/rfc2119) [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
 
@@ -14,7 +14,7 @@ Tooling MAY make use of these features now, with minimal work required to suppor
 
 Path|Version 3.0.x Object|New Extension|Type|Description
 ---|---|---|---|---|
-#/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array MUST be **prepended to** any existing `servers` array converted from Swagger 2.0 metadata
+#/|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|When converting to OpenAPI 3.0.x, this array is used in place of any `servers` array converted from Swagger 2.0 metadata
 #/paths/{[Path Item](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#path-item-object)}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
 #/paths/{[Path Item](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#path-item-object)}/{[operation](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)}|servers|x-servers|[[Server Objects](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/versions/3.0.md#server-object)]|
 #/paths/{[Path Item](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#path-item-object)}/{[Operation](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)}|trace|x-trace|[V2 Operation Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)|This MUST be a Swagger 2.0 Operation Object, it MUST be treated as per any other Operation Object, for the `TRACE` HTTP method

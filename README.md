@@ -2,7 +2,7 @@
 
 ### A proposal for transitioning between Swagger 2.0 and OpenAPI 3.0.x
 
-#### Version 1.0.0-rc3
+#### Version 1.0.0-rc4
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BCP 14](https://tools.ietf.org/html/bcp14) [RFC2119](https://tools.ietf.org/html/rfc2119) [RFC8174](https://tools.ietf.org/html/rfc8174) when, and only when, they appear in all capitals, as shown here.
 
@@ -27,6 +27,7 @@ Path|Version 3.0.x Object|New Extension|Type|Description
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schema-object)|not|x-not|[Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#schemaObject)|Schema MUST be extracted and post-processed before being used for validation
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schema-object)|required|x-required|Array|Where a property has been removed from `required` due to use of `x-anyOf`, `x-oneOf` or `x-not`, converters MUST merge these arrays when converting from **swaggerplusplus** to OpenAPI 3.0.x. When a converter converts from 3.0.x to **swaggerplusplus** it MUST remove any `required` properties hidden by `x-anyOf`, `x-oneOf` or `x-not` and move them into this array.
 \* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schema-object)|nullable|x-nullable|Boolean|Indicates whether the property is nullable or not.
+\* within [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schema-object)|discriminator|x-discriminator|[Discriminator Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#discriminator-object)|A version 3.0.x `discriminator object` to replace the version 2.0 `discriminator` property.
 \* within [Response Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#response-object)|links|x-links|Map {[Link Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#link-object)}|Links or references to reusable Link Objects
 #/|components/links|x-links|Map {[Link Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#link-object)}|Contains reusable Link Objects
 #/|components/callbacks|x-callbacks|Map {[Callback Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#callback-object)}|Contains reusable Callback Objects
